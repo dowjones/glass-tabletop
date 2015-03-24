@@ -77,3 +77,5 @@ collection.get("articles", function(err, list, callback){
 });
 
 ```
+
+Released in 2015 by Erin Sparling @ [Dow Jones](https://github.com/dowjones)
