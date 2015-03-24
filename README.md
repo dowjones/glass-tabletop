@@ -1,4 +1,4 @@
-#[Glass-Tabletop](https://github.com/dowjones/glass-tabletop) by [Dow Jones](https://github.com/dowjones)
+#[Glass-Tabletop](https://github.com/dowjones/glass-tabletop)
 ##Tabletop.js + Memory-Cache
 
 ##Introduction
