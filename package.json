@@ -1,0 +1,21 @@
+{
+  "name": "glass-tabletop",
+  "version": "0.2.1",
+  "description": "A clearer view into Google Spreadsheets",
+  "main": "index.js",
+  "dependencies":{
+    "tabletop":"1.3.5",
+    "memory-cache":"0.1.1",
+    "async":"0.9.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dowjones/glass-tabletop.git"
+  },
+  "author": "Erin Sparling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dowjones/glass-tabletop/issues"
+  },
+  "homepage": "https://github.com/dowjones/glass-tabletop"
+}
