@@ -16,7 +16,8 @@ var collection = {
     if(callback == undefined){callback = process; process = null;}
 
     var parent = this;
-    if(cache.get(table) == null) {
+    var cacheKey = parent.settings._spreadsheet_id + '__' + table;
+    if(cache.get(cacheKey) == null) {
       tabletop.init({
         key: parent.settings._spreadsheet_id,
         callback: function(data){
@@ -25,12 +26,12 @@ var collection = {
           if(process != null) {
             process(null, items, function(items){
               if(parent.settings._debug) console.log("process fired")
-              cache.put(table, JSON.stringify(items), parent.settings._cache_timeout);
+              cache.put(cacheKey, JSON.stringify(items), parent.settings._cache_timeout);
               callback(null, items);
             })
           } else {
             if(parent.settings._debug) console.log("process didn't fire")
-            cache.put(table, JSON.stringify(items), parent.settings._cache_timeout);
+            cache.put(cacheKey, JSON.stringify(items), parent.settings._cache_timeout);
             callback(null, items);
           }
         },
@@ -38,7 +39,7 @@ var collection = {
       });
     } else {
       if(parent.settings._debug) console.log(table + " served from the cache");
-      callback(null, JSON.parse(cache.get(table)));
+      callback(null, JSON.parse(cache.get(cacheKey)));
     }
   }
 };
